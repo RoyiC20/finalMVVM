@@ -12,9 +12,11 @@ namespace finalMVVM.Model
         private int userId;
         private string firstName;
         private string lastName;
-        private string city;
-        private string state;
-        private string country;
+        private string kidFirstName;
+        private string kidLastName;
+        private string ageOfKid;
+        private string password;
+        private string email;
 
         public int UserId
         {
@@ -55,42 +57,68 @@ namespace finalMVVM.Model
             }
         }
 
-        public string City
+        public string KidFirstName
         {
             get
             {
-                return city;
+                return kidFirstName;
             }
             set
             {
-                city = value;
-                OnPropertyChanged("City");
+                kidFirstName = value;
+                OnPropertyChanged("kidFirstName");
             }
         }
 
-        public string State
+        public string KidLastName
         {
             get
             {
-                return state;
+                return kidLastName;
             }
             set
             {
-                state = value;
-                OnPropertyChanged("State");
+                kidLastName = value;
+                OnPropertyChanged("kidLastName");
             }
         }
 
-        public string Country
+        public string AgeOfKid
         {
             get
             {
-                return country;
+                return ageOfKid;
             }
             set
             {
-                country = value;
-                OnPropertyChanged("Country");
+                ageOfKid = value;
+                OnPropertyChanged("ageOfKid");
+            }
+        }
+
+        public string Email
+        {
+            get
+            {
+                return email;
+            }
+            set
+            {
+                email = value;
+                OnPropertyChanged("email");
+            }
+        }
+
+        public string Password
+        {
+            get
+            {
+                return password;
+            }
+            set
+            {
+                password = value;
+                OnPropertyChanged("password");
             }
         }
 
