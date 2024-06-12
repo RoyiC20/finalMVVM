@@ -19,36 +19,20 @@ using System.Windows.Shapes;
 namespace finalMVVM.View
 {
     /// <summary>
-    /// Interaction logic for Main.xaml
+    /// Interaction logic for ScoreList.xaml
     /// </summary>
-    public partial class Main : Page
+    public partial class ScoreList : Page
     {
-
-        private UserViewModel _userViewModel;
         private SharedViewModel _sharedViewModel;
+        private ScoreViewModel _scoreViewModel;
 
-        public Main(SharedViewModel sharedViewModel)
+        public ScoreList(SharedViewModel sharedViewModel)
         {
             InitializeComponent();
-            _userViewModel = new UserViewModel(sharedViewModel);
-            DataContext = _userViewModel;
+
             _sharedViewModel = sharedViewModel;
-            
-        }
-
-
-        private void BtnUpdate_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void txtUserId_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void UserGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+            _scoreViewModel = new ScoreViewModel(sharedViewModel);
+            DataContext = _scoreViewModel;
 
         }
 
@@ -61,11 +45,9 @@ namespace finalMVVM.View
             }
         }
 
-        private void txtEmail_TextChanged(object sender, TextChangedEventArgs e)
+        private void ScoreGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
-
-        
     }
 }

@@ -23,11 +23,12 @@ namespace finalMVVM.View
     public partial class Register : Page
     {
 
-
+        private static int UserIdCounter = 10;
         public Register(SharedViewModel sharedViewModel)
         {
             InitializeComponent();
             _sharedViewModel = sharedViewModel;
+            
         }
         public SharedViewModel _sharedViewModel;
 
@@ -56,8 +57,9 @@ namespace finalMVVM.View
                         {
                             if (PasswordOfUser.Text == ConfirmPassword.Text)
                             {
+                                UserIdCounter += 1;
 
-                                _sharedViewModel.UsersList.Add(new User { FirstName = NameOfUser.Text, LastName = LastNameOfUser.Text, KidFirstName = FirstNameOfKid.Text, KidLastName = LastNameOfKid.Text, AgeOfKid = AgeOfKid.Text, Email = EmailOfUser.Text, Password = PasswordOfUser.Text});
+                                _sharedViewModel.UsersList.Add(new User { UserId = UserIdCounter, FirstName = NameOfUser.Text, LastName = LastNameOfUser.Text, KidFirstName = FirstNameOfKid.Text, KidLastName = LastNameOfKid.Text, AgeOfKid = AgeOfKid.Text, Email = EmailOfUser.Text, Password = PasswordOfUser.Text }); 
 
                                 if (NavigationService != null)
                                 {

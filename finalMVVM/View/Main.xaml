@@ -17,10 +17,10 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <ListView Name="UserGrid" Grid.Row="1" Margin="360,5,10,10" ItemsSource="{Binding Users}" SelectionChanged="UserGrid_SelectionChanged">
+        <ListView Name="UserGrid" Grid.Row="1" Margin="360,5,10,10" ItemsSource="{Binding Users}" SelectionMode="Single" SelectionChanged="UserGrid_SelectionChanged">
             <ListView.View>
                 <GridView x:Name="grdTest">
-                    <GridViewColumn Header="UserId" DisplayMemberBinding="{Binding UserId}" Width="50"   />
+                    <GridViewColumn Header="UserId" DisplayMemberBinding="{Binding UserId}"  Width="50"   />
                     <GridViewColumn Header="First Name" DisplayMemberBinding="{Binding FirstName}" Width="80"/>
                     <GridViewColumn Header="Last Name" DisplayMemberBinding="{Binding LastName}" Width="100"/>
                     <GridViewColumn Header="First name of kid" DisplayMemberBinding="{Binding KidFirstName}" Width="120"/>
@@ -40,11 +40,11 @@
             <TextBox Height="23" x:Name="txtLname"  Margin="10" Text="{Binding SelectedItem.LastName, ElementName=UserGrid}"/>
             <TextBox Height="24" x:Name="txtLnameKid" Margin="10" Text="{Binding SelectedItem.KidLastName, ElementName=UserGrid}"/>
             <TextBox Height="24" x:Name="txtAgeKid"  Margin="10" Text="{Binding SelectedItem.AgeOfKid, ElementName=UserGrid}"/>
-            <TextBox Height="24" x:Name="txtEmail"  Margin="10" Text="{Binding SelectedItem.Email, ElementName=UserGrid}"/>
+            <TextBox Height="24" x:Name="txtEmail"  Margin="10" Text="{Binding SelectedItem.Email, ElementName=UserGrid}" TextChanged="txtEmail_TextChanged"/>
 
         </StackPanel>
 
-        <Button Content="Update" Grid.Row="1" Height="41" HorizontalAlignment="Left" Margin="195,360,0,0" Name="btnUpdate" VerticalAlignment="Top" FontSize="20" Width="130" Command="{Binding Path=UpdateCommad}" Click="BtnUpdate_Click" />
+        <Button Content="update" Grid.Row="1" Height="41" HorizontalAlignment="Left" Margin="195,360,0,0" Name="btnDelete" VerticalAlignment="Top" FontSize="20" Width="130" Command="{Binding Path=DeleteCommand}"  />
 
 
         <StackPanel Margin="10,32,920,58" Grid.Row="1">

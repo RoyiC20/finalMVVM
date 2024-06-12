@@ -47,11 +47,25 @@ namespace finalMVVM.View
             {
                 if (user.Password == PasswordOfUser.Text)
                 {
-                    if (NavigationService != null)
+                    if (user.Password == "password0" && user.Email == "admin@example.com")
                     {
-                        Main main = new Main(sharedViewModel);
-                        NavigationService.Navigate(main);
-                        MessageBox.Show("Welcome " + user.FirstName);
+                        if (NavigationService != null)
+                        {
+                            AdminSelect admindSelect = new AdminSelect(sharedViewModel);
+                            NavigationService.Navigate(admindSelect);
+                            MessageBox.Show("Welcome " + user.FirstName);
+                        }
+                    }
+                    else
+                    {
+
+                        if (NavigationService != null)
+                        {
+                            sharedViewModel.setLoggedInUserEmail(EmailOfUser.Text);
+                            TriviaStart triviaStart = new TriviaStart(sharedViewModel);
+                            NavigationService.Navigate(triviaStart);
+                            MessageBox.Show("Welcome " + user.FirstName);
+                        }
                     }
                 }
                 else

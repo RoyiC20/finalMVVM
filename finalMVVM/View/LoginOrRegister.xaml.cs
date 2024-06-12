@@ -37,6 +37,7 @@ namespace finalMVVM.View
             {
                 _sharedViewModel.UsersList = new List<User>
             {
+                    new User { UserId = 0, FirstName = "admin", LastName = "admin", Email = "admin@example.com", Password = "password0", KidFirstName = "0", KidLastName = "0", AgeOfKid = "0" },
                 new User { UserId = 1, FirstName = "אביגיל", LastName = "כהן", Email = "abigail@example.com", Password = "password1", KidFirstName = "אליעד", KidLastName = "כהן", AgeOfKid = "5" },
     new User { UserId = 2, FirstName = "משה", LastName = "לוי", Email = "moshe@example.com", Password = "password2", KidFirstName = "נועם", KidLastName = "לוי", AgeOfKid = "5" },
     new User { UserId = 3, FirstName = "שרה", LastName = "גולן", Email = "sarah@example.com", Password = "password3", KidFirstName = "אורי", KidLastName = "גולן", AgeOfKid = "4" },

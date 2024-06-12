@@ -1,5 +1,4 @@
 ﻿using finalMVVM.Model;
-using finalMVVM.ViewModel;
 using MVVMWithAdd.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -19,35 +18,41 @@ using System.Windows.Shapes;
 namespace finalMVVM.View
 {
     /// <summary>
-    /// Interaction logic for Main.xaml
+    /// Interaction logic for TriviaStart.xaml
     /// </summary>
-    public partial class Main : Page
+    public partial class TriviaStart : Page
     {
-
-        private UserViewModel _userViewModel;
         private SharedViewModel _sharedViewModel;
-
-        public Main(SharedViewModel sharedViewModel)
+        private string category;
+        public TriviaStart(SharedViewModel sharedViewModel)
         {
             InitializeComponent();
-            _userViewModel = new UserViewModel(sharedViewModel);
-            DataContext = _userViewModel;
             _sharedViewModel = sharedViewModel;
-            
         }
 
+        
 
-        private void BtnUpdate_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void txtUserId_TextChanged(object sender, TextChangedEventArgs e)
+        private void StartLearning_Click(object sender, RoutedEventArgs e)
         {
 
+            TriviaList triviaList = new TriviaList(_sharedViewModel);
+            //NavigationService.Navigate(triviaList);
+
+            
+            TriviaGame triviaGame = new TriviaGame(_sharedViewModel, _sharedViewModel.getQuestions(this.category));
+            NavigationService.Navigate(triviaGame);
+
+
+
         }
 
-        private void UserGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void classComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            startLearning.IsEnabled = true;
+            this.category = (comboBox.SelectedItem as ComboBoxItem)?.Content.ToString();
+        }
+
+        private void nameOfAnswerer_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
@@ -60,12 +65,5 @@ namespace finalMVVM.View
                 NavigationService.Navigate(loginOrRegister);
             }
         }
-
-        private void txtEmail_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        
     }
 }
