@@ -35,9 +35,9 @@
         <StackPanel  Grid.Row="1" Width="200" Margin="160,32,765,94">
 
             <TextBox Height="23" x:Name="txtUserId"  Margin="10" Text="{Binding SelectedItem.UserId, ElementName=UserGrid}" />
-            <TextBox Height="23" x:Name="txtFnameKid"  Margin="10" Text="{Binding SelectedItem.KidFirstName, ElementName=UserGrid}"/>
             <TextBox Height="23" x:Name="txtFname"  Margin="10" Text="{Binding SelectedItem.FirstName, ElementName=UserGrid}"/>
             <TextBox Height="23" x:Name="txtLname"  Margin="10" Text="{Binding SelectedItem.LastName, ElementName=UserGrid}"/>
+            <TextBox Height="23" x:Name="txtFnameKid"  Margin="10" Text="{Binding SelectedItem.KidFirstName, ElementName=UserGrid}"/>
             <TextBox Height="24" x:Name="txtLnameKid" Margin="10" Text="{Binding SelectedItem.KidLastName, ElementName=UserGrid}"/>
             <TextBox Height="24" x:Name="txtAgeKid"  Margin="10" Text="{Binding SelectedItem.AgeOfKid, ElementName=UserGrid}"/>
             <TextBox Height="24" x:Name="txtEmail"  Margin="10" Text="{Binding SelectedItem.Email, ElementName=UserGrid}" TextChanged="txtEmail_TextChanged"/>

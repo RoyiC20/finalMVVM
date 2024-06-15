@@ -103,5 +103,10 @@ namespace finalMVVM.View
                 NavigationService.Navigate(loginOrRegister);
             }
         }
+
+        private void PasswordOfUser_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
